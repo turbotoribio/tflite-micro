@@ -18,11 +18,11 @@ limitations under the License.
 #include <cstddef>
 #include <cstdint>
 
-#include "tensorflow/lite/c/common.h"
 #include "tensorflow/lite/micro/arena_allocator/single_arena_buffer_allocator.h"
 #include "tensorflow/lite/micro/compatibility.h"
 #include "tensorflow/lite/micro/flatbuffer_utils.h"
 #include "tensorflow/lite/micro/memory_planner/micro_memory_planner.h"
+#include "tensorflow/lite/micro/micro_common.h"
 #include "tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.h"
 #include "tensorflow/lite/schema/schema_generated.h"
 
@@ -68,7 +68,7 @@ struct ScratchBufferRequest {
 
 struct NodeAndRegistration {
   TfLiteNode node;
-  const TfLiteRegistration_V1* registration;
+  const TFLMRegistration* registration;
 };
 
 // Holds a pointer to a buffer for a scratch buffer requested by a kernel during

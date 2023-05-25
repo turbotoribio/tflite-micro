@@ -32,7 +32,7 @@ package_group(
 )
 
 ####################################
-# C++ libraries
+#C++ libraries
 ####################################
 
 cc_library(
@@ -323,10 +323,11 @@ tflm_kernel_cc_library(
         "//conditions:default": [],
     }),
     visibility = [
-        # Public visibility to allow application code to select kernel variants.
+#Public visibility to allow application code to select kernel variants.
         "//visibility:public",
     ],
     deps = [
+        "//tensorflow/lite/micro:micro_common",
         ":activation_utils",
         ":kernel_util",
         ":micro_tensor_utils",
@@ -359,7 +360,7 @@ tflm_kernel_cc_library(
 )
 
 ####################################
-# C++ tests
+#C++ tests
 ####################################
 
 cc_test(
@@ -1404,7 +1405,7 @@ cc_test(
 )
 
 ####################################
-# Bazel config settings.
+#Bazel config settings.
 ####################################
 
 config_setting(

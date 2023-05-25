@@ -91,8 +91,8 @@ TfLiteStatus CircularBufferEval(TfLiteContext* context, TfLiteNode* node) {
     EvalInt8(tflite::micro::GetTensorData<int8_t>(input), num_slots, depth,
              tflite::micro::GetTensorData<int8_t>(output));
   } else {
-    MicroPrintf("Type %s (%d) not supported.",
-                       TfLiteTypeGetName(input->type), input->type);
+    MicroPrintf("Type %s (%d) not supported.", TfLiteTypeGetName(input->type),
+                input->type);
     return kTfLiteError;
   }
 
@@ -108,8 +108,8 @@ TfLiteStatus CircularBufferEval(TfLiteContext* context, TfLiteNode* node) {
   return kTfLiteOk;
 }
 
-TfLiteRegistration_V1* Register_CIRCULAR_BUFFER() {
-  static TfLiteRegistration_V1 r = tflite::micro::RegisterOp(
+TFLMRegistration* Register_CIRCULAR_BUFFER() {
+  static TFLMRegistration r = tflite::micro::RegisterOp(
       CircularBufferInit, CircularBufferPrepare, CircularBufferEval);
   return &r;
 }
