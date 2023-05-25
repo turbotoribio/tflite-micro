@@ -23,8 +23,8 @@ limitations under the License.
 #include "tensorflow/lite/kernels/internal/compatibility.h"
 #include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
 #include "tensorflow/lite/kernels/internal/types.h"
-#include "tensorflow/lite/micro/micro_context.h"
 #include "tensorflow/lite/micro/micro_common.h"
+#include "tensorflow/lite/micro/micro_context.h"
 
 namespace tflite {
 namespace micro {

@@ -44,14 +44,13 @@ TFLMRegistration RegisterOp(
     TfLiteStatus (*invoke)(TfLiteContext* context, TfLiteNode* node),
     void (*free)(TfLiteContext* context, void* buffer),
     void (*reset)(TfLiteContext* context, void* buffer)) {
-  return {
-      /*init=*/init,
-      /*free=*/free,
-      /*prepare=*/prepare,
-      /*invoke=*/invoke,
-      /*reset=*/reset,
-      /*builtin_code=*/0,
-      /*custom_name=*/nullptr};
+  return {/*init=*/init,
+          /*free=*/free,
+          /*prepare=*/prepare,
+          /*invoke=*/invoke,
+          /*reset=*/reset,
+          /*builtin_code=*/0,
+          /*custom_name=*/nullptr};
 }
 
 // Returns a mutable tensor for a given input index. is_variable must be checked
